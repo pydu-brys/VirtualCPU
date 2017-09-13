@@ -1,15 +1,15 @@
 # VirtualCPU
 ## Intro
-I built this Python program to simulate how memory (256 bytes) and register (16 bytes) interact while running machine code instructions with a GUI. The program displays changes in Memory, Register, Program Counter, and Instruction Register step-by-step. The program was written under Jupyter Notebook (which is why there are many "In[#]" throughout my code) with Python 3. The GUI package used is tkinter.
+I have built this Python program to simulate how memory (256 bytes) and register (16 bytes) interact while running machine code instructions with a GUI. The program displays changes in Memory, Register, Program Counter, and Instruction Register step-by-step. The program was written under Jupyter Notebook (which is why there are many "In[#]" throughout my code) with Python 3. The GUI package used is tkinter.
 
-This program was originally for education use for the CSIM department at Soochow University in Taipei, Taiwan.
+This program was developed for educational purpose for students in CSIM department at Soochow University in Taipei, Taiwan. 
 
 ## Features
-The program support the following features:
-#### 1. User-defined machine code instruction (in certain format) stored in an external with text file
+The program supports the following features:
+#### 1. User-defined machine code instruction (in certain format) stored in an external text file
 #### 2. Two's complement for integer calculation (with "overflow" message if the result is overflowed)
 #### 3. Options of "run" or "step" depending on if user wants to observe the process or just to see the result
-#### 4. 14 types of machine code instruction including LOAD/ STORE/ ROTATE/ JUMP/ STOP (Please see Machine Code section for more info)
+#### 4. 14 types of machine code instructions including LOAD/ STORE/ ROTATE/ JUMP/ STOP (Please see Machine Code section for more info)
 
 ## Machine Code Instructions
 #### 1RXY: 
@@ -42,6 +42,6 @@ INPUT value to memory location XY
 OUTPUT the value of memory location XY
 
 ## How to run the simulator
-#### 1. Create an .txt file containing your machine code instruction. The instruciton should follow the format of "XXXX XXXX ... COOO"
+#### 1. Create an .txt file containing your machine code instruction. The instruciton should follow the format of "XXXX XXXX ... COOO" e.g. 121A 2123 C000
 #### 2. Load your .txt file through the "Browse" button
 #### 3. Use "Step" button to observe the changes step by step or "Run" button to see the final result
