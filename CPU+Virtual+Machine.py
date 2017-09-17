@@ -628,10 +628,3 @@ class virtualCPU:
 
 
 virtualCPU()
-<<<<<<< HEAD
-
-
-
-virtualCPU()
-=======
->>>>>>> 0e5c0a8fe44e5c85d49ad3ea1718032d2ac3ec11
