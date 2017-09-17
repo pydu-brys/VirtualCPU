@@ -42,6 +42,6 @@ INPUT value to memory location XY
 OUTPUT the value of memory location XY
 
 ## How to run the simulator
-#### 1. Create an .txt file containing your machine code instruction. For the instruciton formate, Please refer to the file text.txt. That set of instructions will first LOAD the bit pattern found in memory 1A to register 2, and then STORE the bit pattern in register 23 to register. Lastly will tell the machine to stop.
+#### 1. Create an .txt file containing your machine code instruction. For the instruciton formate, Please refer to the file text.txt. That set of instructions will first LOAD the bit pattern found in memory 1A to register 2, and then STORE the bit pattern in register 1 to memory 23. Lastly will tell the machine to stop.
 #### 2. Load your .txt file through the "Browse" button
 #### 3. Use "Step" button to observe the changes step by step or "Run" button to see the final result
