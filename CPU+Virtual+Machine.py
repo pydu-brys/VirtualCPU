@@ -14,13 +14,6 @@ IR = '----'
 msg = ''
 opt = ""
 ipt = ""
-from random import randint
-
-#for i in range(0,16):
-#    REG[i] = str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1))
-
-#for i in range(0,256):
-#    MMR[i] = str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1)) + str(randint(0,1))
 
 
 # In[2]:
@@ -87,7 +80,7 @@ def incrtInst():
 
 
 # In[7]:
-
+#Machine Code (B and C are in "step" and "run" method)
 class code:
     def code1(self, R, XY): #LOAD the register R with the bit pattern found in the memory cell whose address is XY
         R = int(str(R), 16) #tranform the hexadecimal number into decimal
@@ -203,13 +196,18 @@ class code:
         upperPart = REG[R][(-X):]
         REG[R] = upperPart + lowerPart
 
+<<<<<<< HEAD
     def codeD(self, XY):
         global ipt, MMR
+=======
+    def codeD(self, XY): #INPUT value to memory location XY
+        global ipt
+>>>>>>> 0e5c0a8fe44e5c85d49ad3ea1718032d2ac3ec11
         XY = int(str(XY), 16)
         iptValue()
         MMR[XY] = int2Bin(ipt, 8)
 
-    def codeE(self, XY):
+    def codeE(self, XY): #OUTPUT value of memory location XY
         global opt
         XY = int(str(XY), 16)
         opt = opt + " " + bin2Hex(MMR[XY])
@@ -630,7 +628,10 @@ class virtualCPU:
 
 
 virtualCPU()
+<<<<<<< HEAD
 
 
 
 virtualCPU()
+=======
+>>>>>>> 0e5c0a8fe44e5c85d49ad3ea1718032d2ac3ec11
