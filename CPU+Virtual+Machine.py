@@ -204,7 +204,7 @@ class code:
         REG[R] = upperPart + lowerPart
 
     def codeD(self, XY):
-        global ipt
+        global ipt, MMR
         XY = int(str(XY), 16)
         iptValue()
         MMR[XY] = int2Bin(ipt, 8)
@@ -532,8 +532,8 @@ class virtualCPU:
             globals()['btREG%s' % i] = Button(window, text = bin2Hex(REG[i]))
             exec("btREG%s.grid(row = 20, column = i+1, pady = 15)" % i)
             for j in range(0,16):
-                globals()['button%s%s' % (i, j)] = Button(window, text = bin2Hex(MMR[16 * i + j]))
-                exec("button%s%s.grid(row = i+1, column = j+1, sticky = E)" % (i, j))
+                globals()['button%s_%s' % (i, j)] = Button(window, text = bin2Hex(MMR[16 * i + j]))
+                exec("button%s_%s.grid(row = i+1, column = j+1, sticky = E)" % (i, j))
                 #exec("label%s%s.pack()" % (i, j))
 
         #browseBut.pack()
@@ -553,7 +553,8 @@ class virtualCPU:
         for i in range(0,16):
             exec('btREG%s["text"] = bin2Hex(REG[' % i + str(i) + '])')
             for j in range(0,16):
-                exec('button%s%s["text"] = bin2Hex(MMR[16 * ' % (i,j) + str(i) + ' + ' + str(j) + '])' )
+                value = bin2Hex(MMR[16 * i + j])
+                exec('button%s_%s["text"] = value' % (i, j))
         self.etyPC["text"] = PC
         self.etyIR["text"] = IR
         self.outputMsg["text"] = opt
@@ -632,74 +633,4 @@ virtualCPU()
 
 
 
-# In[273]:
-
-#instInput('C:/Users/brys1/Desktop/test.txt', 'a4')
-#MMR
-hex(randint(0,16))[-1] + hex(randint(0,16))[-1]
-
-
-# In[ ]:
-
-run("AA")
-#REG
-
-
-# In[80]:
-
-REG = '00001001'
-X = 4
-
-lowerPart = REG[:(8-X)]
-upperPart = REG[(-X):]
-REG = upperPart + lowerPart
-
-print(REG)
-
-
-# In[29]:
-
-'{0:08b}'.format(128)
-
-
-# In[130]:
-
-msg
-
-
-# In[164]:
-
-bin2Hex('00000000')
-
-
-# In[143]:
-
-MMR
-
-
-# In[138]:
-
-test = code()
-
-
-# In[161]:
-
-test.codeA('1','2')
-
-
-# In[162]:
-
-REG
-
-
-# In[152]:
-
-MMR
-
-
-# In[172]:
-
-msg = "test"
-
-
-# In[ ]:
+virtualCPU()
