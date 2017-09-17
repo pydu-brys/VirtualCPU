@@ -117,7 +117,6 @@ class code:
             print ("overflow")
             msg = "overflow"
 
-    #*****
     def code6(self, R, S, T): #ADD the bit patterns in registers S and T as through they represented values in floating-point notation and leave the floating-point result in register R
         R = int(str(R), 16)
         S = int(str(S), 16)
@@ -157,7 +156,6 @@ class code:
 
 
 
-    #*****
 
     def code7(self, R, S, T): #OR the bit patterns in registers S and T and place the result in register R
         R = int(str(R), 16)
@@ -196,13 +194,11 @@ class code:
         upperPart = REG[R][(-X):]
         REG[R] = upperPart + lowerPart
 
-<<<<<<< HEAD
     def codeD(self, XY):
         global ipt, MMR
-=======
+
     def codeD(self, XY): #INPUT value to memory location XY
         global ipt
->>>>>>> 0e5c0a8fe44e5c85d49ad3ea1718032d2ac3ec11
         XY = int(str(XY), 16)
         iptValue()
         MMR[XY] = int2Bin(ipt, 8)
